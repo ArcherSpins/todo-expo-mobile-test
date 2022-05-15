@@ -1,21 +1,16 @@
 import React from 'react';
-import {
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
+import {View, StyleSheet, TouchableOpacity, Text} from 'react-native';
 
 const Tasks = props => {
   const {text, handleDeleteTask, index, handleEditTask} = props;
 
   const onDeleteTask = () => {
     handleDeleteTask(index);
-  }
+  };
 
   const onEditTask = () => {
     handleEditTask(index);
-  }
+  };
 
   return (
     <View style={styles.item}>

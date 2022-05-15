@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 
-const Auth = ({ onLogin }) => (
+const Auth = ({onLogin}) => (
   <View style={styles.container}>
     <Text style={styles.text}>Set Authentication to Proceed :</Text>
     <TouchableOpacity style={styles.button} onPress={onLogin}>

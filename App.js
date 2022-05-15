@@ -1,15 +1,9 @@
 // @flow
 import React, {useCallback, useMemo, useState} from 'react';
-import {
-  View,
-  SafeAreaView,
-  StyleSheet,
-  StatusBar,
-  Alert,
-} from 'react-native';
+import {View, SafeAreaView, StyleSheet, StatusBar, Alert} from 'react-native';
 import * as LocalAuthentication from 'expo-local-authentication';
-import Home from './screens/HomeScreen';
-import Auth from './screens/AuthScreen';
+import Home from './src/screens/HomeScreen';
+import Auth from './src/screens/AuthScreen';
 
 export default () => {
   const [isAuth, setAuth] = useState(false);
@@ -49,7 +43,7 @@ export default () => {
       </View>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   root: {
