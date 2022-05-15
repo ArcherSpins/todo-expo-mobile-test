@@ -52,32 +52,30 @@ const Home = () => {
    */
   const handleEditTask = _index => {
     let itemsEdit = [...taskItems];
-    setIndex(index => _index);
+    setIndex(() => _index);
     setTask(itemsEdit[_index]);
     setUpdate(!update);
   };
 
   const renderTasks = () => {
-    return taskItems.map((item, index) => {
+    return taskItems.map((item, idx) => {
       return (
         <Tasks
-          key={index}
+          key={idx}
           text={item}
-          index={index}
+          index={idx}
           handleDeleteTask={handleDeleteTask}
           handleEditTask={handleEditTask}
         />
       );
-    })
-  }
+    });
+  };
 
   return (
     <View style={styles.container}>
       <Text style={styles.text}>TODO :</Text>
 
-      <ScrollView style={styles.items}>
-        {renderTasks()}
-      </ScrollView>
+      <ScrollView style={styles.items}>{renderTasks()}</ScrollView>
 
       <KeyboardAvoidingView style={styles.inputContainer}>
         <TextInput
@@ -113,7 +111,7 @@ const styles = StyleSheet.create({
     marginLeft: '5%',
   },
   button: {
-    marginLeft: '50%'
+    marginLeft: '50%',
   },
   items: {
     marginTop: 30,
